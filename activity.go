@@ -1,4 +1,4 @@
-package TestConnection
+package OracleConn
 
 import (
     
@@ -11,7 +11,7 @@ import (
 )
 
 // log is the default package logger which we'll use to log
-	var log = logger.GetLogger("activity-TestConnection")
+	var log = logger.GetLogger("activity-OracleConn")
 
 // MyActivity is a stub for your Activity implementation
 type MyActivity struct {
