@@ -1,7 +1,7 @@
 package OracleConn
 
 import (
-    
+    "fmt"
     "database/sql"
     _ "github.com/mattn/go-oci8"
 	"github.com/TIBCOSoftware/flogo-lib/logger"	
@@ -37,9 +37,9 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error)  {
 	
 	
     db, err := sql.Open("oci8",sqlurl)
-	log.Debugf("Connection Successfull");
+	fmt.Printf("Connection Successfull");
     if err != nil {
-         log.Debugf("Connection Refused");
+         fmt.Printf("Connection Refused");
         return
     }
     defer db.Close()
@@ -47,7 +47,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error)  {
     
     if err = db.Ping(); err != nil {
      
-	  log.Debugf("Error connecting to the database: [%s]",err);
+	  fmt.Printf("Error connecting to the database: [%s]",err);
         return
     }
 	
